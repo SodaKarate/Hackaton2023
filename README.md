@@ -1,6 +1,6 @@
 # Hackaton2023
 Ezt a repot eredményhirdetés
-után kb egy hétel le fogom venni
+után kb egy héttel le fogom venni
 (ha nem felejtem el)
                                                                -`                    
 Hardware:                                                     .o+`                   
