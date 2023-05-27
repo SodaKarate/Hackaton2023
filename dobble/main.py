@@ -1,45 +1,70 @@
-import itertools
+import sys
 
-def generate_dobble_deck(n):
-    symbols = list(range(1, n+1))
-    deck = []
-    
-    # Generate the first card with all symbols
-    card = symbols.copy()
-    deck.append(card)
-    
-    # Generate the remaining cards
-    for i in range(2, n+1):
-        # Generate all possible combinations of symbols with size n-1
-        combinations = itertools.combinations(symbols, n-1)
-        for combination in combinations:
-            # Add the current symbol to the combination
-            card = list(combination) + [i]
-            
-            # Check if the current card duplicates any existing card
-            is_duplicate = False
-            for existing_card in deck:
-                if len(set(card) & set(existing_card)) > 0:
-                    is_duplicate = True
-                    break
-            
-            # If the current card is unique, add it to the deck
-            if not is_duplicate:
-                deck.append(card)
-    
-    return deck
+def generate_dobble_cards(numberOfSymbolsOnCard):
+    """
+    Dobble kártyák generálása a megadott szimbólumok számával.
 
-# Main program
+    Args:
+        numberOfSymbolsOnCard (int): A kártyán szereplő szimbólumok száma.
+
+    Returns:
+        list: Generált Dobble kártyák listája. Minden kártyát egy lista reprezentál, amely tartalmazza a szimbólumokat.
+
+    """
+    symbols = list(range(1, numberOfSymbolsOnCard + 1))
+
+    cards = []
+
+    n = numberOfSymbolsOnCard - 1
+
+    # A Dobble szabályoknak megfelelően generálható kártyák teljes száma
+    numberOfCards = n ** 2 + n + 1
+
+    # Első n+1 kártya hozzáadása
+    for i in range(n + 1):
+        # Új kártya hozzáadása az első szimbólummal
+        cards.append([1])
+        # n+1 szimbólum hozzáadása a kártyához
+        for j in range(n):
+            cards[i].append((j + 1) + (i * n) + 1)
+
+    # n darab n szimbólumos kártya hozzáadása
+    for i in range(0, n):
+        for j in range(0, n):
+            # Új kártya hozzáadása 1 szimbólummal
+            cards.append([i + 2])
+            # n szimbólum hozzáadása a kártyához
+            for k in range(0, n):
+                val = (n + 1 + n * k + (i * k + j) % n) + 1
+                cards[len(cards) - 1].append(val)
+
+    return cards
+
+def print_dobble_cards(cards):
+    """
+    Dobble kártyák kiírása a konzolra.
+
+    Args:
+        cards (list): A Dobble kártyák listája.
+
+    Returns:
+        None
+
+    """
+    i = 0
+    for card in cards:
+        i += 1
+        line = str(i) + " - ["
+        for number in card:
+            line = line + str(number) + ", "
+        line = line[:-2] + "]"
+        print(line)
+
 if __name__ == "__main__":
-    import sys
-    
-    if len(sys.argv) < 2:
-        print("Usage: python3 main.py n")
+    if len(sys.argv) != 2:
+        print("Használat: python3 main.py <kártyán szereplő szimbólumok száma>\nPl: python3 main.py 5")
         sys.exit(1)
-    
-    n = int(sys.argv[1])
-    deck = generate_dobble_deck(n)
-    
-    # Print the generated deck
-    for card in deck:
-        print(" ".join(str(symbol) for symbol in card))
+
+    numberOfSymbolsOnCard = int(sys.argv[1])
+    dobble_cards = generate_dobble_cards(numberOfSymbolsOnCard)
+    print_dobble_cards(dobble_cards)

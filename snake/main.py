@@ -8,7 +8,7 @@ HEIGHT = 30
 snake_x = random.randint(1, WIDTH-2)
 snake_y = random.randint(1, HEIGHT-2)
 
-# pálya inditása
+# pálya indítása
 board = []
 for y in range(HEIGHT):
     row = []
@@ -22,17 +22,32 @@ for y in range(HEIGHT):
 # piton elhelyezése a pályán
 board[snake_y][snake_x] = "@"
 
-# pálya felirása
 def draw_board():
+    """
+    A pálya kirajzolása a konzolra.
+
+    Returns:
+        None
+    """
+
     for row in board:
         print("".join(row))
     print("Hova?")
 
-# mozgatás
 def move_snake(direction):
+    """
+    A kígyó mozgatása a megadott irányba.
+
+    Args:
+        direction (str): A mozgatási irány ("balra", "jobbra", "fel" vagy "le").
+
+    Returns:
+        None
+    """
+
     global snake_x, snake_y
 
-    # előző pozició törlése
+    # előző pozíció törlése
     board[snake_y][snake_x] = " "
 
     if direction == "balra":
