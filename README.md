@@ -14,6 +14,6 @@
 
 <h2>Resources:</h2>
     Dobble:
-    <a href="https://www.youtube.com/watch?v=VTDKqW_GLkw">How does Dobble (Spot It) work?</a>, Andros barátom
+    <a href="https://www.youtube.com/watch?v=VTDKqW_GLkw">How does Dobble (Spot It) work?</a>, Andros barátom <br>
     Pizza:
     <a href="https://www.pysimplegui.org/en/latest/cookbook/">PySimpleGUI cookbook</a>
