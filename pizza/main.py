@@ -1,6 +1,18 @@
 import PySimpleGUI as sg
 
 def exitCheck(adatok):
+
+    """
+    Kilépési ellenőrzés és rendelés részleteinek megjelenítése.
+
+    Args:
+        adatok (list): A rendelések mennyiségeit tartalmazó lista.
+
+    Returns:
+        None
+
+    """
+     
     indexek = ['sajtos pizza', 'sonkás pizza', 'gombás pizza', 'hawaii pizza', 'pepsi', 'coca cola', 'viz']
     layout = []
 
@@ -29,6 +41,19 @@ def exitCheck(adatok):
             window.close()
 
 def checkInput(adat,lista):
+
+    """
+    Rendelési adatok ellenőrzése és frissítése.
+
+    Args:
+        adat (str): A rendelési adatok.
+        lista (list): A rendelések mennyiségeit tartalmazó lista.
+
+    Returns:
+        list: Frissített rendelési lista.
+
+    """
+
     if 'sajtos pizza' in adat:
         lista[0]+=1
     if 'sonkás pizza' in adat:
@@ -48,6 +73,18 @@ def checkInput(adat,lista):
 
 
 def showCurrentList(adatok):
+
+    """
+    Jelenlegi rendelési lista megjelenítése.
+
+    Args:
+        adatok (list): A rendelések mennyiségeit tartalmazó lista.
+
+    Returns:
+        None
+
+    """
+     
     indexek = ['sajtos pizza', 'sonkás pizza', 'gombás pizza', 'hawaii pizza', 'pepsi', 'coca cola', 'viz']
     layout = []
 
