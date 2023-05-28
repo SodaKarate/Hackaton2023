@@ -1,5 +1,4 @@
 <h1>Hackaton 2023</h1>
-<h2>Ezt a repot eredményhirdetés után kb egy héttel le fogom venni (ha nem felejtem el)</h2>
                  
 <h2>Hardware:</h2>                                                                     
     Ryzen 7 2700X <br>
