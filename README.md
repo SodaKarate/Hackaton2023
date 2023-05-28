@@ -13,5 +13,5 @@
 
 <h2>Resources:</h2>
     Dobble:
-        https://www.youtube.com/watch?v=VTDKqW_GLkw
+    <a href="https://www.youtube.com/watch?v=VTDKqW_GLkw">How does Dobble (Spot It) work?</a><br>
         Andros barátom
