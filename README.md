@@ -10,8 +10,10 @@
     IDE: Visual Studio Code
     Shell: fish 3.6.1
     Operating System: Arch Linux x86-64 (btw)
+    Python: Python 3.11.3
 
 <h2>Resources:</h2>
     Dobble:
-    <a href="https://www.youtube.com/watch?v=VTDKqW_GLkw">How does Dobble (Spot It) work?</a><br>
-        Andros barátom
+    <a href="https://www.youtube.com/watch?v=VTDKqW_GLkw">How does Dobble (Spot It) work?</a>, Andros barátom
+    Pizza:
+    <a href="https://www.pysimplegui.org/en/latest/cookbook/">PySimpleGUI cookbook</a>
