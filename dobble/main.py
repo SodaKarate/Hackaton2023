@@ -51,13 +51,11 @@ def print_dobble_cards(cards):
         None
 
     """
-    i = 0
     for card in cards:
-        i += 1
-        line = str(i) + " - ["
+        line =''
         for number in card:
-            line = line + str(number) + ", "
-        line = line[:-2] + "]"
+            line = line + str(number) + " "
+        line = line[:-2]
         print(line)
 
 if __name__ == "__main__":

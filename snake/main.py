@@ -1,8 +1,8 @@
 import random
 
-# pályaméretek
-WIDTH = 60
-HEIGHT = 30
+# pályaméretek +2 hogy a mozgási tér megfeleljen
+WIDTH = 62
+HEIGHT = 32
 
 # Kigyó kezdőpozíciója
 snake_x = random.randint(1, WIDTH-2)
